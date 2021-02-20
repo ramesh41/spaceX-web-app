@@ -1,0 +1,54 @@
+.filter-container{
+    background-color: #fff;
+    border-radius:4px ;
+}
+
+.filter-title{
+    margin: 0;
+    text-align: left;
+    padding: 10px 20px;
+}
+.landing-title,
+.launching-status-title,
+.launching-year-title{
+    width: 160px;
+    padding: 7px;
+    margin: 10px auto;
+    margin-bottom: 13px;
+    border-bottom: 2px solid #eceaea73;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #bbdc3978;
+    border: 1px solid #bbdc3978;
+    &:nth-child(even) {
+        margin-right: 0;
+    }
+    &:nth-child(odd) {
+        margin-left: 0;
+    }
+    &:active{
+        background-color: #89a223f0;
+        border: 1px solid #89a223f0;
+    }
+}
+
+.btn.active {                
+	display: none;		
+}
+
+.btn span:nth-of-type(1)  {            	
+	display: none;
+}
+.btn span:last-child  {            	
+	display: block;		
+}
+
+.btn.active  span:nth-of-type(1)  {            	
+	display: block;		
+}
+.btn.active span:last-child  {            	
+	display: none;			
+}

@@ -1,0 +1,31 @@
+<div>
+<div class="col-25" *ngFor="let spaceXProgram of spaceXPrograms">
+  <div class="block gutter">
+    <div class=" mission-card">
+      <img src={{spaceXProgram.links.mission_patch_small}} alt={{spaceXProgram.mission_name}} style="width:100%">
+      <div class="text-left mission-info-container">
+        <p class="mission-title">{{spaceXProgram.mission_name}} # {{spaceXProgram.flight_number}}</p>
+        <label>Mission Ids:</label>
+          <ul><li *ngFor="let missionid of spaceXProgram.mission_id">
+            <span *ngIf="missionid">{{missionid}}</span>
+          </li></ul>
+        <label>Launch years: <span>{{spaceXProgram.launch_year}}</span></label>
+        <label>Successful Launch: <span>{{spaceXProgram.launch_success}}</span></label>
+        <label>Successful Landing: <span>{{spaceXProgram.landing_landing}} NA</span></label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+<div class="notfound" *ngIf="noMissionFound">
+  <!--<div class="sorry-title">
+    <h1>So<span>rr</span>y</h1>
+    <p>No results found</p>
+  </div>-->
+  <div class="sorry-title">
+    <div class="loader"></div>
+    <h1>Lo<span>ad</span>ing...</h1>
+  </div>
+</div>
+</div>
+
