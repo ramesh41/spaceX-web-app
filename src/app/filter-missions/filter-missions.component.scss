@@ -1,6 +1,7 @@
 .filter-container{
     background-color: #fff;
     border-radius:4px ;
+    height: 890px;
 }
 
 .filter-title{
@@ -23,11 +24,16 @@
     border-radius: 5px;
     background-color: #bbdc3978;
     border: 1px solid #bbdc3978;
+    width: 22%;
     &:nth-child(even) {
-        margin-right: 0;
+        display: block;
+    float: right;
+    margin: 10px 60px 0 0px;
     }
     &:nth-child(odd) {
-        margin-left: 0;
+        float: left;
+    margin: 10px 13px 0 60px;
+    display: block;
     }
     &:active{
         background-color: #89a223f0;
