@@ -14,11 +14,9 @@ $gutter: 40px;
 
 //some styling:
 .block{
-    //background-color: $block-color;
 	display: block;
 	text-align: center;
     margin-bottom: 20px;
-    //border: 2px solid red;
 }
 
 //the grid:
@@ -27,55 +25,48 @@ $gutter: 40px;
 	margin-right: ($gutter / 2);
 }
 
-.col-33{
-	width: 33.3%;
-	float: left;
+.grid-col-left{
+	width: 18%;
+	float: left; 
 }
-.col-50{
-	width: 50%;
-	float: left;
-}
-
-.col-25{
-    width: 18%;
+.grid-col-right{
+	width: 82%;
 	float: left; 
 }
 
-.col-75{
-    width: 82%;
-	float: left; 
+.custom-grid {
+	width: 18%;
+	float: left;
 }
-
 .clear{
 	clear: both;
 	display: block;
 }
 
-//responsive
-
+//Below Styling apply to mobile Device responsive
 @media all and (max-width:700px) {
-	.col-33{
-		width: 50%;
-    }
-    .col-25{
+    .custom-grid{
 		width: 100%;
     }
-    .col-75{
-        width: 100%;
-	}
-	.col-50, .col-33{
-		width: 100%;
+	.grid-col-left{
 		float: none;
+		width: 100%;
+	}
+	.grid-col-right{
+		float: none;
+		width: 100%; 
 	}
 }
-
-
+//Below Styling apply to Tab Device responsive
 @media all and (min-width: 700px) and (max-width: 1024px){
-	.col-25{
+	.custom-grid{
 		width: 50%;
+    }
+	.grid-col-left{
+		width: 33%;
 	}
-	.grid-col-sm{
-		width: 100%;
+	.grid-col-right{
+		width: 67%; 
 	}
 }
 

@@ -41,6 +41,33 @@
     }
 }
 
+.de-select-btn,.year-label-btn{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #bbdc3978;
+    border: 1px solid #bbdc3978;
+    width: 22%;
+    &:nth-child(even) {
+        display: block;
+    float: right;
+    margin: 10px 60px 0 0px;
+    }
+    &:nth-child(odd) {
+        float: left;
+    margin: 10px 13px 0 60px;
+    display: block;
+    }
+    &:active{
+        background-color: #89a223f0;
+        border: 1px solid #89a223f0;
+    }
+}
+
+.active{
+    background-color: #89a223f0;
+    border: 1px solid #89a223f0;
+}
+
 .btn.active {                
 	display: none;		
 }
