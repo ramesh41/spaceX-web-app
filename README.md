@@ -45,3 +45,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
    ![Screenshot 2021-02-23 at 3 27 05 PM](https://user-images.githubusercontent.com/7519776/108827762-ff8b0f80-75eb-11eb-92e5-b1e75c5e0dd9.png)
    ![Screenshot 2021-02-23 at 3 27 41 PM](https://user-images.githubusercontent.com/7519776/108827759-fd28b580-75eb-11eb-8b76-5690ae383e29.png)
    ![Screenshot 2021-02-23 at 3 27 30 PM](https://user-images.githubusercontent.com/7519776/108827768-0023a600-75ec-11eb-860b-28f0f53ac57b.png)
+   
+   
+### Notes:
+1 - Successful landing does not available into Backend Response.
+2 - Hightlighted filters active is not completed due to time constraint.
