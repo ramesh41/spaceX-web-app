@@ -1,0 +1,41 @@
+$white: #fff;
+$img-background: #f2f2f2;
+$card-title-color: #5d68a0;
+.card {
+  background: $white;
+  border-radius: 0.5rem;
+  .card-media {
+    padding: 2rem 2rem 0.25rem;
+    img {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      background: $img-background;
+    }
+  }
+  .card-content {
+    padding: 0.5rem 2rem 2rem;
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $card-title-color;
+    }
+    .pb-4 {
+      padding-bottom: 1rem;
+    }
+    .card-content-data {
+      display: flex;
+      padding: 0.5rem 0;
+    }
+    .card-content-data-label {
+      font-size: 1.5rem;
+      line-height: 1.75rem;
+      font-weight: 700;
+    }
+    .card-content-data-value {
+      font-size: 1.5rem;
+      line-height: 1.75rem;
+      color: $card-title-color;
+    }
+  }
+}

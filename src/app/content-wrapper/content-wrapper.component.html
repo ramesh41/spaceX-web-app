@@ -1,0 +1,41 @@
+<div class="flex flex-row flex-wrap full-width">
+  <aside class="col-12 md:col-4 lg:col-2 p-3">
+    <app-filter-missions></app-filter-missions>
+  </aside>
+  <section class="col-12 md:col-8 lg:col-10 flex flex-wrap align-self-start">
+    <router-outlet></router-outlet>
+    <div class="col-12 md:col-6 lg:col-3 p-3" *ngFor="let spaceXProgram of spaceXPrograms">
+      <div>
+        <div class="full-height card">
+          <div class="card-media">
+            <img width="200" height="200" src={{spaceXProgram.links.mission_patch_small}}
+              alt={{spaceXProgram.mission_name}}>
+          </div>
+          <div class="card-content">
+            <div class="card-title pb-4"> {{spaceXProgram.mission_name}} # {{spaceXProgram.flight_number}}</div>
+            <div class="card-content-data">
+              <div class="card-content-data-label"> Mission Ids:&nbsp; </div>
+            </div>
+            <div class="card-content-data-value pl-12 pt-0">
+              <ul>
+                <li *ngFor="let missionid of spaceXProgram.mission_id">{{missionid}}</li>
+              </ul>
+            </div>
+            <div class="card-content-data">
+              <div class="card-content-data-label"> Launch Year:&nbsp; </div>
+              <div class="card-content-data-value"> {{spaceXProgram.launch_year}}</div>
+            </div>
+            <div class="card-content-data">
+              <div class="card-content-data-label"> Successful Launch:&nbsp; </div>
+              <div class="card-content-data-value"> {{spaceXProgram.launch_success}}</div>
+            </div>
+            <div class="card-content-data">
+              <div class="card-content-data-label"> Successful Landing:&nbsp; </div>
+              <div class="card-content-data-value"> {{landingStatus}} </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,22 +1,25 @@
-<div class="filter-container">
-  <h3 class="filter-title">Filters</h3>
-  <div class="launching-year-title"> Launching Years</div>
-  
-  <div>
-    <button type="button" class="btn btn-successs"(click)="selectedYear(year)" *ngFor="let year of yearsList" >{{year}}</button>
-  </div>
+<div class="bg-white br-2">
+  <div class="container p-4">
+    <p class="h3">Filters</p>
+    
+    <p class="subtitle1 text-center">Launch Year</p>
+    <div class="divider-middle"></div>
+    <div class="p-4 full-width flex flex-wrap space-between" >
+      <a class="mb-6 flex-basis-40 btn btn-green" *ngFor="let year of yearsList; let i = index" (click)="launchYears(year)" [class.active-link]="year == userSelectedYearFilter">{{year}} </a>
+    </div>
+   
+    <p class="subtitle1 text-center">Successful Launch</p>
+    <div class="divider-middle"></div>  
+    <div class="p-4 full-width flex flex-wrap space-between">
+      <a class="mb-6 flex-basis-40 btn btn-green" (click)="successfulLaunching('true')" [class.active-link]=" 'true' == userSelectedLaunchFilter"> True </a>
+      <a class="mb-6 flex-basis-40 btn btn-green" (click)="successfulLaunching('false')" [class.active-link]=" 'false' == userSelectedLaunchFilter"> False </a>
+    </div>
 
-
-  <div style="clear: both;"></div>
-  <div class="launching-status-title">Successful Launch</div>
-  <div>
-      <button type="button" class="btn btn-successs" (click)="launchSuccessful(true)">True</button>
-      <button type="button" class="btn btn-successs" (click)="launchSuccessful(false)">False</button>
-  </div>
-  <div style="clear: both;"></div>
-  <div class="landing-title">Successful Landing</div>
-  <div>
-      <button type="button" class="btn btn-successs" (click)="landingStatus(true)">True</button>
-      <button type="button" class="btn btn-successs" (click)="landingStatus(false)">False</button>
+    <p class="subtitle1 text-center">Successful Landing</p>
+    <div class="divider-middle"></div>
+    <div class="p-4 full-width flex flex-wrap space-between">
+      <a class="mb-6 flex-basis-40 btn btn-green" (click)="successfulLanding('true')" [class.active-link]=" 'true' == userSelectedLandingFilter"> True </a>
+      <a class="mb-6 flex-basis-40 btn btn-green" (click)="successfulLanding('false')" [class.active-link]=" 'false' == userSelectedLandingFilter"> False </a>
+    </div>
   </div>
 </div>

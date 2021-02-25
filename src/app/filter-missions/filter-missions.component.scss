@@ -1,87 +1,27 @@
-.filter-container{
-    background-color: #fff;
-    border-radius:4px ;
-    height: 890px;
-}
-
-.filter-title{
-    margin: 0;
-    text-align: left;
-    padding: 10px 20px;
-}
-.landing-title,
-.launching-status-title,
-.launching-year-title{
-    width: 160px;
-    padding: 7px;
-    margin: 10px auto;
-    margin-bottom: 13px;
-    border-bottom: 2px solid #eceaea73;
-}
+$btn-color-light-green: #c5e09b;
+$btn-font-color: #3d4631;
+$button-hover-color: #7bba02;
 
 .btn {
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #bbdc3978;
-    border: 1px solid #bbdc3978;
-    width: 22%;
-    &:nth-child(even) {
-        display: block;
-    float: right;
-    margin: 10px 60px 0 0px;
-    }
-    &:nth-child(odd) {
-        float: left;
-    margin: 10px 13px 0 60px;
-    display: block;
-    }
-    &:active{
-        background-color: #89a223f0;
-        border: 1px solid #89a223f0;
-    }
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 4rem;
+  text-align: center;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
-.de-select-btn,.year-label-btn{
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #bbdc3978;
-    border: 1px solid #bbdc3978;
-    width: 22%;
-    &:nth-child(even) {
-        display: block;
-    float: right;
-    margin: 10px 60px 0 0px;
-    }
-    &:nth-child(odd) {
-        float: left;
-    margin: 10px 13px 0 60px;
-    display: block;
-    }
-    &:active{
-        background-color: #89a223f0;
-        border: 1px solid #89a223f0;
-    }
+.btn-green {
+  background: $btn-color-light-green;
+  color: $btn-font-color;
 }
 
-.active{
-    background-color: #89a223f0;
-    border: 1px solid #89a223f0;
-}
-
-.btn.active {                
-	display: none;		
-}
-
-.btn span:nth-of-type(1)  {            	
-	display: none;
-}
-.btn span:last-child  {            	
-	display: block;		
-}
-
-.btn.active  span:nth-of-type(1)  {            	
-	display: block;		
-}
-.btn.active span:last-child  {            	
-	display: none;			
+.btn.active-link {
+  background: $button-hover-color;
 }

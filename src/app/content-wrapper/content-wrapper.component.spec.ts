@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MissionComponent } from './mission.component';
+import { ContentWrapperComponent } from './content-wrapper.component';
 
-describe('MissionComponent', () => {
-  let component: MissionComponent;
-  let fixture: ComponentFixture<MissionComponent>;
+describe('ContentWrapperComponent', () => {
+  let component: ContentWrapperComponent;
+  let fixture: ComponentFixture<ContentWrapperComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MissionComponent ]
+      declarations: [ ContentWrapperComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MissionComponent);
+    fixture = TestBed.createComponent(ContentWrapperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
