@@ -52,7 +52,7 @@ export class FilterMissionsComponent implements OnInit {
   getSpaceXLaunchMissions(reqObj: any){
     this.spaceXDataService.getSpaceLaunchData(reqObj).subscribe(res =>{
       this.getSpaceXMissions = res; 
-      this.spaceXDataService.changeMessage(this.getSpaceXMissions, this.userSelectedLandingFilter)    
+      this.spaceXDataService.changeMessage(this.getSpaceXMissions)    
       }
     )
   }
