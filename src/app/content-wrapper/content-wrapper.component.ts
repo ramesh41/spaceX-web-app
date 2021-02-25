@@ -13,15 +13,8 @@ export class ContentWrapperComponent implements OnInit {
   public landingStatus: boolean = false;
   subscription: Subscription;
   reqObj = {};
-  constructor(private spaceXDataService: SpaceXDataService, private route: ActivatedRoute) { 
-    this.spaceXDataService.getSpaceLaunchData(this.reqObj).subscribe(getRes =>{
-      this.spaceXPrograms = getRes;
-    }, error => {
-      console.log('Log the error : ' + error)
-    }, () => {
-      // 'onCompleted' callback.
-      // No errors, route to new page here
-    });
+  constructor(private spaceXDataService: SpaceXDataService,
+     private route: ActivatedRoute) { 
   }
 
   ngOnInit(): void {

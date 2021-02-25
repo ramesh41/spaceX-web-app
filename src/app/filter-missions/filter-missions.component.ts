@@ -37,6 +37,7 @@ export class FilterMissionsComponent implements OnInit {
         if(this.userSelectedLandingFilter !== undefined){
           this.filterObj['landing_success'] = this.userSelectedLandingFilter;
         }
+        this.getSpaceXLaunchMissions(this.filterObj);
       });
   }
   
