@@ -19,43 +19,51 @@ export class SpaceXDataService {
 
   getSpaceLaunchData(obj: any){
     let getEndPointURL: string = environment.SPACE_X_LAUNCH_MISSION_URL;
-    const getspaceXMissionURL = this.getF(obj, getEndPointURL);
-    return this.httpClient.get(getspaceXMissionURL);
+    const getspaceXMissionURL = this.getSpaceXLaunchEndPointURL(obj, getEndPointURL);
+    return this.httpClient.get(getspaceXMissionURL).pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
   }
-  private handleErr(error: Response){
-     return throwError(error)
-  } 
-  private handleError(error: HttpErrorResponse) {
+
+  handleError(error) {
+    let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
+      // A client-side or network errors occurred. Handle it accordingly.
       console.error('An error occurred:', error.error.message);
+      errorMessage = `Error: ${error.error.message}`;
     } else {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong.
       console.error(
         `Backend returned code ${error.status}, ` +
         `body was: ${error.error}`);
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
+    window.alert(errorMessage);
     // Return an observable with a user-facing error message.
-    return throwError(
-      'Something bad happened; please try again later.');
+    return throwError(errorMessage);
   }
 
-  getF(obj: any, url: string){
-    if(obj.hasOwnProperty('launching') && obj.hasOwnProperty('landing') && obj.hasOwnProperty('year')){
-      url = url+environment.SUCCESSFUL_LAUNCHING_STATUS +obj.launching+ environment.SUCCESSFUL_LANDING_STATUS+obj.landing+ '&launch_year='+obj.year;
-    } else if(obj.hasOwnProperty('launching') && obj.hasOwnProperty('year')){
-      url = url+environment.SUCCESSFUL_LAUNCHING_STATUS+obj.launching+ environment.LAUNCHING_YEAR+obj.year;
-    } else if(obj.hasOwnProperty('landing') && obj.hasOwnProperty('year')){
-      url = url+environment.SUCCESSFUL_LANDING_STATUS+obj.landing+ environment.LAUNCHING_YEAR+obj.year;
-    } else if(obj.hasOwnProperty('launching') && obj.hasOwnProperty('landing')){
-      url = url+environment.SUCCESSFUL_LAUNCHING_STATUS+obj.launching +environment.SUCCESSFUL_LANDING_STATUS+obj.landing;
-    } else if(obj.hasOwnProperty('year')){
-      url = url+ environment.LAUNCHING_YEAR+obj.year;
-    } else if(obj.hasOwnProperty('launching')){
-      url = url+ environment.SUCCESSFUL_LAUNCHING_STATUS+obj.launching;
-    } else if(obj.hasOwnProperty('landing')){
-      url = url+ environment.SUCCESSFUL_LANDING_STATUS+obj.landing;
+  private handleErr(error: Response){
+     return throwError(error)
+  } 
+
+  getSpaceXLaunchEndPointURL(obj: any, url: string){
+    if(obj.hasOwnProperty('launch_success') && obj.hasOwnProperty('landing_success') && obj.hasOwnProperty('launch_year')){
+      url = url+environment.SUCCESSFUL_LAUNCHING_STATUS +obj.launch_success+ environment.SUCCESSFUL_LANDING_STATUS+obj.landing_success+ '&launch_year='+obj.launch_year;
+    } else if(obj.hasOwnProperty('launch_success') && obj.hasOwnProperty('launch_year')){
+      url = url+environment.SUCCESSFUL_LAUNCHING_STATUS+obj.launch_success+ environment.LAUNCHING_YEAR+obj.launch_year;
+    } else if(obj.hasOwnProperty('landing_success') && obj.hasOwnProperty('launch_year')){
+      url = url+environment.SUCCESSFUL_LANDING_STATUS+obj.landing_success+ environment.LAUNCHING_YEAR+obj.launch_year;
+    } else if(obj.hasOwnProperty('launch_success') && obj.hasOwnProperty('landing_success')){
+      url = url+environment.SUCCESSFUL_LAUNCHING_STATUS+obj.launch_success +environment.SUCCESSFUL_LANDING_STATUS+obj.landing_success;
+    } else if(obj.hasOwnProperty('launch_year')){
+      url = url+ environment.LAUNCHING_YEAR+obj.launch_year;
+    } else if(obj.hasOwnProperty('launch_success')){
+      url = url+ environment.SUCCESSFUL_LAUNCHING_STATUS+obj.launch_success;
+    } else if(obj.hasOwnProperty('landing_success')){
+      url = url+ environment.SUCCESSFUL_LANDING_STATUS+obj.landing_success;
     } else{
       url = url;
     }
